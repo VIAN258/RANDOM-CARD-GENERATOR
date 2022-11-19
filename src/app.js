@@ -8,10 +8,6 @@ import "./assets/img/4geeks.ico";
 const numero = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 const simbolos = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
 
-//document.getElementById("alto").innerHTML = "2";
-//document.getElementById("medio").innerHTML = "3";
-//document.getElementById("bajo").innerHTML = "7";
-
 function numeroAleatorio() {
   let aleatorio = Math.floor(Math.random() * 12);
   return numero[aleatorio];
@@ -22,11 +18,21 @@ function simbolosAleatorio() {
   return simbolos[aleatorio];
 }
 
-function intercambiar() {}
+function intercambiar1() {
+  let simbolo = simbolosAleatorio();
+  document.getElementById("alto").innerHTML = simbolo;
+}
 
-setInterval(function() {
-  console.log("angel");
-}, 1000);
+function intercambiar2() {
+  let simbolo = simbolosAleatorio();
+  document.getElementById("bajo").innerHTML = simbolo;
+}
 
-//console.log(numeroAleatorio());
-//console.log(simbolosAleatorio());
+function intercambiar3() {
+  let numero = numeroAleatorio();
+  document.getElementById("medio").innerHTML = numero;
+}
+
+setInterval(intercambiar1(), 1000);
+setInterval(intercambiar2(), 1000);
+setInterval(intercambiar3(), 1000);
