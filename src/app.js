@@ -7,7 +7,7 @@ import "./assets/img/4geeks.ico";
 
 const numero = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 const simbolos = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
-const colores = ["black", "red", "black"];
+const colores = ["black", "red"];
 
 function numeroAleatorio() {
   let aleatorio = Math.floor(Math.random() * 12);
@@ -35,10 +35,13 @@ function intercambiar3() {
 }
 
 function colorAleatorio() {
-  let aleatorio = Math.floor(Math.random() * colores.lenght);
-  body.style.color = colores[aleatorio];
+  let aleatorio = Math.floor(Math.random() * 2);
+  bajo.style.color = colores[aleatorio];
+  medio.style.color = colores[aleatorio];
+  alto.style.color = colores[aleatorio];
 }
 
 setInterval(intercambiar1(), 1000);
 setInterval(intercambiar2(), 1000);
 setInterval(intercambiar3(), 1000);
+setInterval(colorAleatorio(), 1000);
