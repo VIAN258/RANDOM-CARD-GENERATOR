@@ -7,41 +7,42 @@ import "./assets/img/4geeks.ico";
 
 const numero = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 const simbolos = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
-const colores = ["black", "red"];
+
+function simbolosAleatorio() {
+  let aleatorio = Math.floor(Math.random() * 4);
+  if (aleatorio == 0 || aleatorio == 1) {
+    color = "black";
+  } else {
+    color = "red";
+  }
+  return simbolos[aleatorio];
+}
+
+let color;
+
+let simbolo = simbolosAleatorio();
 
 function numeroAleatorio() {
   let aleatorio = Math.floor(Math.random() * 12);
   return numero[aleatorio];
 }
 
-function simbolosAleatorio() {
-  let aleatorio = Math.floor(Math.random() * 3);
-  return simbolos[aleatorio];
-}
-
 function intercambiar1() {
-  let simbolo = simbolosAleatorio();
   document.getElementById("alto").innerHTML = simbolo;
-}
-
-function intercambiar2() {
-  let simbolo = simbolosAleatorio();
   document.getElementById("bajo").innerHTML = simbolo;
 }
 
-function intercambiar3() {
+function intercambiar2() {
   let numero = numeroAleatorio();
   document.getElementById("medio").innerHTML = numero;
 }
 
 function colorAleatorio() {
-  let aleatorio = Math.floor(Math.random() * 2);
-  bajo.style.color = colores[aleatorio];
-  medio.style.color = colores[aleatorio];
-  alto.style.color = colores[aleatorio];
+  bajo.style.color = color;
+  medio.style.color = color;
+  alto.style.color = color;
 }
 
 setInterval(intercambiar1(), 1000);
 setInterval(intercambiar2(), 1000);
-setInterval(intercambiar3(), 1000);
 setInterval(colorAleatorio(), 1000);
